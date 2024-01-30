@@ -1,6 +1,7 @@
 import requests
+import time
 def process_data(data):
-    return {"city": data["name"], "datetime": data["dt"], "temp" : data['main']['temp'], "humidity" : data['main']['humidity']}
+    return {"city": data["name"], "datetime": time.ctime(int(data["dt"])), "temp" : data['main']['temp'], "humidity" : data['main']['humidity']}
 
 
 def get_weather_data(city ="Tehran",appid ="f7724e8aed23c33e6018eb622216937f"):
